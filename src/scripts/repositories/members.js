@@ -12,8 +12,7 @@ const client = axios.create({
 // APIクライアントを差し替えるパターン
 //
 export class MembersRepository extends BaseRepository {
-  constructor() {
-    super()
+  initClient() {
     this.$_client = client
   }
   get() {

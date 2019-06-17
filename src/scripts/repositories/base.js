@@ -16,6 +16,7 @@ export class BaseRepository {
     this.initClient()
   }
 
+  // 別の API クライアントを差し込みたい場合にoverrideします
   initClient() {
     this.$_client = client
   }
