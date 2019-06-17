@@ -9,5 +9,11 @@ const repositories = {
 }
 
 export const RepositoryFactory = {
-  get: name => new repositories[name]
+  get(name) {
+    const klass = repositories[name]
+    if (klass.stub) {
+      return new klass.stubRepository
+    }
+    return new repositories[name]
+  }
 }

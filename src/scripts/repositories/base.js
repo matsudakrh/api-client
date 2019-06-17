@@ -10,6 +10,10 @@ const client = axios.create({
 export default client
 
 export class BaseRepository {
+  static get stub() {
+    return false
+  }
+
   constructor() {
     this.$_client = client
   }

@@ -8,6 +8,9 @@ const client = axios.create({
   baseURL
 })
 
+//
+// APIクライアントを差し替えるパターン
+//
 export class MembersRepository extends BaseRepository {
   constructor() {
     super()
