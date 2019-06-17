@@ -12,8 +12,8 @@ export const RepositoryFactory = {
   get(name) {
     const klass = repositories[name]
     if (klass.stub) {
-      return new klass.stubRepository
+      return new klass.getStubRepository
     }
-    return new repositories[name]
+    return new klass
   }
 }

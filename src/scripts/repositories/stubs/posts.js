@@ -1,6 +1,8 @@
-export default class StubPostsRepository {
+import { BaseStubRepositoory } from './base'
+
+export default class StubPostsRepository extends BaseStubRepositoory {
   get() {
     console.log('Postsのみスタブ化')
-    return import('../../../../db/db.json')
+    return this.stubResponse(import('../../../../db/db.json'))
   }
 }

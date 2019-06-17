@@ -7,14 +7,16 @@ const client = axios.create({
   baseURL
 })
 
-export default client
-
 export class BaseRepository {
   static get stub() {
     return false
   }
 
   constructor() {
+    this.initClient()
+  }
+
+  initClient() {
     this.$_client = client
   }
 }

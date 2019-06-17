@@ -1,15 +1,15 @@
-import Repository from './base'
+import { BaseRepository } from './base'
 import StubPostsRepository from './stubs/posts'
 
 const resoure = '/posts'
-export default class PostsRepository {
+export default class PostsRepository extends BaseRepository {
   static get stub() {
     return super.stub || true
   }
-  static get stubRepository() {
+  static get getStubRepository() {
     return StubPostsRepository
   }
   get() {
-    return Repository.get(`${resoure}`)
+    return this.$_client.get(`${resoure}`)
   }
 }
