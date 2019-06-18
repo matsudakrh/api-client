@@ -9,7 +9,12 @@ export default class PostsRepository extends BaseRepository {
   static get getStubRepository() {
     return StubPostsRepository
   }
+
   get() {
     return this.$_client.get(`${resoure}`)
+  }
+
+  getPost(id) {
+    return this.$_client.get(`${resoure}/${id}`)
   }
 }

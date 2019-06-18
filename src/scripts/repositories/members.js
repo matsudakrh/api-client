@@ -15,7 +15,12 @@ export class MembersRepository extends BaseRepository {
   initClient() {
     this.$_client = client
   }
+
   get() {
     return this.$_client.get()
+  }
+
+  getMember(id) {
+    return this.$_client.get(`${id}`)
   }
 }
